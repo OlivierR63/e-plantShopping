@@ -240,6 +240,7 @@ function ProductList() {
     const handleCartClick = (e) => {
         e.preventDefault();
         setShowCart(true); // Set showCart to true when cart icon is clicked
+        setShowPlants(true);
     };
 
     const handlePlantsClick = (e) => {
@@ -295,7 +296,7 @@ function ProductList() {
                                     <div className="product-title">{plant.name}</div>
                                     <div className = "product-description">plant.description</div>
                                     <div className = "product-cost">plant.cost</div>
-                                    <button className = "product-button" OnClick={()=>handleAddToCart(plant)}>Add To Cart</button>
+                                    <button className = "product-button" OnClick={(plant)=>handleAddToCart(plant)}>Add To Cart</button>
                                 </div>
                             ))}
                         </div>
