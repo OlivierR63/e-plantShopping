@@ -12,10 +12,6 @@ const CartItem = ({ onContinueShopping }) => {
         return items.reduce((total, item) => total + calculateTotalCost(item), 0);
     };
 
-    const handleContinueShopping = () => {
-        onContinueShopping();
-    };
-
     const handleCheckoutShopping = (e) => {
         alert('Functionality to be added for future reference');
     };
@@ -31,7 +27,6 @@ const CartItem = ({ onContinueShopping }) => {
         else{
             dispatch(removeItem({ name: item.name }));
         }
-
     };
 
     const handleRemove = (item) => {
