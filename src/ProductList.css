@@ -170,13 +170,24 @@ body {
     margin-left: 27px;
     position: absolute;
     font-size: 29px;
-
+}
+.cart-badge {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    min-width: 24px;
+    text-align: center;
 }
 .plantname_heading{
    display: flex;
    align-items: center;
    justify-content: center;
-    /* background-color: yellow; */
 }
 .plant_heading{
     width: 400px;
@@ -185,8 +196,6 @@ body {
     border: 1px solid rgb(5, 4, 4);
     border-left: none;
     border-right: none;
-
-    
 }
 /* Add Media Query for responsiveness */
 @media (max-width: 768px) {
