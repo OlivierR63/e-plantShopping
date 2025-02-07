@@ -216,6 +216,7 @@ function ProductList() {
             ]
         }
     ];
+
     const styleObj={
         backgroundColor: '#4CAF50',
         color: '#fff!important',
@@ -254,16 +255,11 @@ function ProductList() {
         setShowCart(false);
     };
 
-    const [addedToCart, setAddedToCart]=useState({});
-    //const cart = useSelector(state => state.cart.items);
-    //const addedToCart = cart.items.
+    const cartItems = useSelector(state => state.cart.items);
+    const isItemInCart = (name) => cartItems.some(item => item.name === name);
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
-        setAddedToCart((prevState) => ({
-            ...prevState,
-            [product.name]: true,
-        }));
     };
     
     return (
@@ -299,7 +295,8 @@ function ProductList() {
                                         <div className = "product-description">{plant.description}</div>
                                         <div className = "product-cost">{plant.cost}</div>
                                         <button className = "product-button" onClick={()=>handleAddToCart(plant)}>
-                                            {addedToCart[plant.name] ? "Added" : "Add To Cart"}
+                                            {/* {addedToCart[plant.name] ? "Added" : "Add To Cart"}*/}
+                                            {isItemInCart(plant.name) ? "Added" : "Add To Cart"}
                                         </button>
                                     </div>
                                 ))}
